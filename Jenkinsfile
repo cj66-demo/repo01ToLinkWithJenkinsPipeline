@@ -4,8 +4,8 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "Etape de build"
-				sh 'python --version'
-                python dateEnPython.py
+				sh 'python3 --version'
+                python3 dateEnPython.py
 			}
 		}
 		stage('Tests') {
