@@ -1,11 +1,22 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World MICSI'
-            }
-        }
-    }
+	agent any
+	stages {
+		stage('Build') {
+			steps {
+				echo "Etape de build"
+				sh 'python --version'
+                python datEnPython.py
+			}
+		}
+		stage('Tests') {
+			steps { 
+				echo "Etape de test"
+			}
+		}
+		stage ('Deploy') {
+			steps {
+				echo "Etape de déploiement"
+			}
+		}
+	}
 }
